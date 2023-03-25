@@ -13,7 +13,9 @@ const SideMenu = () => {
   return (
     <div className="menu">
       <Menu
-        onClick={(item) => {}}
+        onClick={(item) => {
+          navigate(item.key);
+        }}
         items={[
           {
             label: "Dashboard",
