@@ -9,7 +9,7 @@ const Header = () => {
       <Image width={50} src={dashboard} />
       <Title>Admin Dashboard</Title>
       <Space>
-        <Badge count={3}>
+        <Badge count={3} dot>
           <MailOutlined style={{ fontSize: 24 }} />
         </Badge>
         <Badge count={8}>
