@@ -1,5 +1,5 @@
 const PageContent = () => {
-  return <>Content</>;
+  return <div className="content">Content</div>;
 };
 
 export default PageContent;

@@ -1,5 +1,5 @@
 const AppRoutes = () => {
-  return <>Route</>;
+  return <div className="route">Route</div>;
 };
 
 export default AppRoutes;

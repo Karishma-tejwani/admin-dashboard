@@ -1,5 +1,5 @@
 const AppHeader = () => {
-  return <>Header</>;
+  return <div className="header">Header</div>;
 };
 
 export default AppHeader;
