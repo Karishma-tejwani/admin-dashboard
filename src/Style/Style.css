@@ -8,16 +8,17 @@
 /* ----------Header---------- */
 
 .header{
-    height: 50px;
     display: flex;
+    background-color: rgb(226, 217, 217);
     justify-content:space-between;
     align-items: center;
-    padding: 4px;
-    border-bottom: 1px solid rgba(0,0,0,0.15);
+    height: 50px;
+    padding: 4px 20px 4px 12px;
 }
 
-.footer{
-
+.space{
+    display: flex;
+    flex: 1;
 }
 
 .content{
@@ -30,4 +31,14 @@
 
 .route{
 
+}
+
+/* ---------Footer--------- */
+
+.footer{
+    display: flex;
+    background-color: rgb(226, 217, 217);
+    justify-content:space-evenly;
+    align-items: center;
+    height: 50px;
 }
