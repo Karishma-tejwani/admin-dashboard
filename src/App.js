@@ -1,5 +1,5 @@
 import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+import AppFooter from "./Components/AppFooter";
 import PageContent from "./Components/PageContent";
 import SideMenu from "./Components/SideMenu";
 import { Space } from "antd";
@@ -13,7 +13,7 @@ function App() {
         <SideMenu />
         <PageContent />
       </Space>
-      <Footer />
+      <AppFooter />
     </div>
   );
 }
