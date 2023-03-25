@@ -5,8 +5,11 @@ import {
   ShopOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const SideMenu = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="menu">
       <Menu

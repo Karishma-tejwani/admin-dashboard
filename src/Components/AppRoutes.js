@@ -7,14 +7,12 @@ import Orders from "../Pages/Orders";
 const AppRoutes = () => {
   return (
     <div className="route">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/inventory" element={<Inventory />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/customers" element={<Customers />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/inventory" element={<Inventory />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/customers" element={<Customers />} />
+      </Routes>
     </div>
   );
 };
