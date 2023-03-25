@@ -37,8 +37,6 @@
 
 .footer{
     display: flex;
-    background-color: rgb(226, 217, 217);
     justify-content:space-evenly;
     align-items: center;
-    height: 50px;
 }
