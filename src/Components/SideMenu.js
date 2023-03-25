@@ -2,7 +2,7 @@ import { Menu } from "antd";
 import {
   UserOutlined,
   AppstoreOutlined,
-  ShopOutlined,
+  ShoppingOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +24,7 @@ const SideMenu = () => {
           },
           {
             label: "Inventory",
-            icon: <ShopOutlined />,
+            icon: <ShoppingOutlined />,
             key: "/inventory",
           },
           {
