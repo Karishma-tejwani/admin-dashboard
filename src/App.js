@@ -1,4 +1,4 @@
-import AppHeader from "./Components/AppHeader";
+import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import PageContent from "./Components/PageContent";
 import SideMenu from "./Components/SideMenu";
@@ -8,7 +8,7 @@ import "./Style/Style.css";
 function App() {
   return (
     <div className="App">
-      <AppHeader />
+      <Header />
       <Space>
         <SideMenu />
         <PageContent />
