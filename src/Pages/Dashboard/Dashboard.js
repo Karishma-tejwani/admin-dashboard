@@ -1,16 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { Card, Space, Statistic, Table, Typography } from "antd";
+import React from "react";
+import { Typography, Space } from "antd";
 import {
   UserOutlined,
   DollarCircleOutlined,
   ShoppingOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
+import RecentOrders from "./RecentOrders";
+import DashboardCard from "./DashboardCard";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from "react-chartjs-2";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Dashboard = () => {
   return (
-    <div>
-      <Typography.Title level={3}>Dashboard</Typography.Title>
+    <Space size={24} direction="vertical">
+      <Typography.Title level={2} style={{ textAlign: "center" }}>
+        Dashboard
+      </Typography.Title>
       <Space direction="horizontal">
         <DashboardCard
           icon={
@@ -76,46 +84,7 @@ const Dashboard = () => {
       <Space>
         <RecentOrders />
       </Space>
-    </div>
-  );
-};
-
-const DashboardCard = ({ title, value, icon }) => {
-  return (
-    <Card>
-      <Space direction="horizontal">
-        {icon}
-        <Statistic title={title} value={value} />
-      </Space>
-    </Card>
-  );
-};
-
-const RecentOrders = () => {
-  const [data, setData] = useState([]);
-  const [load, setLoad] = useState(false);
-
-  useEffect(() => {
-    setLoad(true);
-  }, []);
-
-  return (
-    <Table
-      columns={[
-        {
-          title: "Title",
-          dataIndex: "title",
-        },
-        {
-          title: "Quantity",
-          dataIndex: "quantity",
-        },
-        {
-          title: "Price",
-          dataIndex: "discountedPrice",
-        },
-      ]}
-    ></Table>
+    </Space>
   );
 };
 
