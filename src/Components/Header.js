@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className="header">
       <Image width={50} src={dashboard} />
-      <Title>Admin Dashboard</Title>
+      <Title>Record Master</Title>
       <Space>
         <Badge count={3} dot>
           <MailOutlined style={{ fontSize: 24 }} />
