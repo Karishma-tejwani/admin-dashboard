@@ -8,10 +8,7 @@ import {
 } from "@ant-design/icons";
 import RecentOrders from "./RecentOrders";
 import DashboardCard from "./DashboardCard";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Pie } from "react-chartjs-2";
-
-ChartJS.register(ArcElement, Tooltip, Legend);
+import DashboardChart from "./DashboardChart";
 
 const Dashboard = () => {
   return (
@@ -83,6 +80,7 @@ const Dashboard = () => {
       </Space>
       <Space>
         <RecentOrders />
+        <DashboardChart />
       </Space>
     </Space>
   );
