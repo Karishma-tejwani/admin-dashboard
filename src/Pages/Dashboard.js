@@ -1,5 +1,5 @@
-import React from "react";
-import { Card, Space, Statistic, Typography } from "antd";
+import React, { useEffect, useState } from "react";
+import { Card, Space, Statistic, Table, Typography } from "antd";
 import {
   UserOutlined,
   DollarCircleOutlined,
@@ -73,6 +73,9 @@ const Dashboard = () => {
           value={150000}
         />
       </Space>
+      <Space>
+        <RecentOrders />
+      </Space>
     </div>
   );
 };
@@ -85,6 +88,34 @@ const DashboardCard = ({ title, value, icon }) => {
         <Statistic title={title} value={value} />
       </Space>
     </Card>
+  );
+};
+
+const RecentOrders = () => {
+  const [data, setData] = useState([]);
+  const [load, setLoad] = useState(false);
+
+  useEffect(() => {
+    setLoad(true);
+  }, []);
+
+  return (
+    <Table
+      columns={[
+        {
+          title: "Title",
+          dataIndex: "title",
+        },
+        {
+          title: "Quantity",
+          dataIndex: "quantity",
+        },
+        {
+          title: "Price",
+          dataIndex: "discountedPrice",
+        },
+      ]}
+    ></Table>
   );
 };
 
