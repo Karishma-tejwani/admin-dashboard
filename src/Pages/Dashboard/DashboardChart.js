@@ -11,7 +11,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import getRevenue from "../API/getRevenue";
+import { getRevenue } from "../API/getApi";
 import { Card } from "antd";
 
 ChartJS.register(
