@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Space, Table, Typography } from "antd";
-import getOrders from "./API/getOrders";
+import { getOrders } from "./API/getApi";
 
 const Orders = () => {
   const [load, setLoad] = useState(false);
