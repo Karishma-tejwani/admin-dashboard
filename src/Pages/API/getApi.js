@@ -13,3 +13,7 @@ export const getOrders = async () => {
 export const getUsers = async () => {
   return fetch("https://dummyjson.com/users").then((res) => res.json());
 };
+
+export const getComments = async () => {
+  return fetch("https://dummyjson.com/comments").then((res) => res.json());
+};
