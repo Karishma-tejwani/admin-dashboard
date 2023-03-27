@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Typography, Space } from "antd";
 import {
   UserOutlined,
@@ -9,8 +9,27 @@ import {
 import RecentOrders from "./RecentOrders";
 import DashboardCard from "./DashboardCard";
 import DashboardChart from "./DashboardChart";
+import { getInventory, getOrders, getUsers } from "../API/getApi";
 
 const Dashboard = () => {
+  const [orders, setOrders] = useState(0);
+  const [revenue, setRevenue] = useState(0);
+  const [users, setUsers] = useState(0);
+  const [inventory, setInventory] = useState(0);
+
+  useEffect(() => {
+    getOrders().then((res) => {
+      setOrders(res.total);
+      setRevenue(res.discountedTotal);
+    });
+    getInventory().then((res) => {
+      setInventory(res.total);
+    });
+    getUsers().then((res) => {
+      setUsers(res.total);
+    });
+  });
+
   return (
     <Space size={24} direction="vertical">
       <Typography.Title level={2} style={{ textAlign: "center" }}>
@@ -30,7 +49,7 @@ const Dashboard = () => {
             />
           }
           title={"Orders"}
-          value={1024}
+          value={orders}
         />
         <DashboardCard
           icon={
@@ -45,7 +64,7 @@ const Dashboard = () => {
             />
           }
           title={"Inventories"}
-          value={2563}
+          value={inventory}
         />
         <DashboardCard
           icon={
@@ -60,7 +79,7 @@ const Dashboard = () => {
             />
           }
           title={"Customers"}
-          value={500}
+          value={users}
         />
         <DashboardCard
           icon={
@@ -75,7 +94,7 @@ const Dashboard = () => {
             />
           }
           title={"Revenue"}
-          value={150000}
+          value={revenue}
         />
       </Space>
       <Space>
