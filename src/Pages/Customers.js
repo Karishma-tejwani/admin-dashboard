@@ -9,7 +9,7 @@ const Customers = () => {
   useEffect(() => {
     setLoad(true);
     getUsers().then((res) => {
-      setData(res.products);
+      setData(res.users);
       setLoad(false);
     });
   }, []);
@@ -23,39 +23,38 @@ const Customers = () => {
         loading={load}
         columns={[
           {
-            title: "Thumbnail",
-            dataIndex: "thumbnail",
+            title: "Image",
+            dataIndex: "image",
             render: (link) => {
               return <Avatar src={link} />;
             },
           },
           {
-            title: "Title",
-            dataIndex: "title",
+            title: "First Name",
+            dataIndex: "firstName",
           },
           {
-            title: "Price",
-            dataIndex: "price",
-            render: (val) => <span>${val}</span>,
+            title: "Last Name",
+            dataIndex: "lastName",
           },
           {
-            title: "Rating",
-            dataIndex: "rating",
-            render: (rate) => {
-              return <Rate value={rate} allowHalf disabled />;
+            title: "Email",
+            dataIndex: "email",
+          },
+          {
+            title: "Phone",
+            dataIndex: "phone",
+          },
+          {
+            title: "Address",
+            dataIndex: "address",
+            render: (add) => {
+              return (
+                <span>
+                  {add.address},{add.city}
+                </span>
+              );
             },
-          },
-          {
-            title: "Stock",
-            dataIndex: "stock",
-          },
-          {
-            title: "Brand",
-            dataIndex: "brand",
-          },
-          {
-            title: "Category",
-            dataIndex: "category",
           },
         ]}
         dataSource={data}
